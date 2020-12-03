@@ -57,9 +57,9 @@ Optional, can be used to set raw string of flag(s) or option(s) for lftp eg. `"-
 ```bash
 uses: cultureweb/ftp-deploy-action@v1.0.0
 with:
-  ftp_username: ${{ secrets.USERNAME }}
-  ftp_host: ${{ secrets.HOST }}
-  ftp_password: ${{ secrets.PASSWORD }}
+  ftp_host: ${{ secrets.FTP_HOST }}
+  ftp_username: ${{ secrets.FTP_USERNAME }}
+  ftp_password: ${{ secrets.FTP_PASSWORD }}
   local_source_dir: "build"
   dist_target_dir: "www/my-app"
   delete: "true"
