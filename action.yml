@@ -1,0 +1,49 @@
+name: "FTP deploy Action"
+author: "Cédric Milius"
+description: "Deploy files to an FTP server using GitHub actions"
+inputs:
+  ftp_host:
+    description: "FTP host"
+    required: true
+  ftp_username:
+    description: "FTP username"
+    required: true
+  ftp_password:
+    description: "FTP password"
+    required: true
+  local_source_dir:
+    description: "The local folder to copy"
+    required: true
+  dist_target_dir:
+    description: "The remote folder"
+    required: true
+  delete:
+    description: "Delete files not present in the local folder on the remote folder"
+    required: false
+    default: "false"
+  only_newer:
+    description: "Download only newer files"
+    required: false
+    default: "false"
+  ignore_time:
+    description: "Ignore time when deciding whether to download"
+    required: false
+    default: "false"
+  exclude:
+    description: "Ignore file(s) and/or directorie(s)"
+    required: false
+    default: ""
+  disable_ssl_certificate_verification:
+    description: "Disable SSL certificate verification"
+    required: false
+    default: "true"
+  other_flags:
+    description: "Optional raw string of flags for lftp eg. --no-empty-dirs"
+    required: false
+    default: ""
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "upload-cloud"
+  color: "blue"
