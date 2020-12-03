@@ -1,6 +1,30 @@
-# Simple FTP deploy action
+# FTP deploy action
 
 Deploy files to an FTP server using GitHub actions
+---
+
+### Requirements
+- You must have ftp access to your server. If your host requires ssh please use my web-deploy action (coming soon)
+- Some web hosts change the default port (21), check with your host for your port number
+
+---
+
+### Setup Steps
+1. Select the repository you want to add the action to
+2. Select the `Actions` tab
+3. Select `Blank workflow file` or `Set up a workflow yourself`, if you don't see these options manually create a yaml file `Your_Project/.github/workflows/main.yml`
+4. Paste the example above into your yaml file and save
+5. Now you need to add a key to the `secrets` section in your project. To add a `secret` go to the `Settings` tab in your project then select `Secrets`. Add a new `Secret` for `password`
+6. Update your yaml file settings
+
+---
+
+### Settings
+Keys can be added directly to your .yml config file or referenced from your project `Secrets` storage.
+
+To add a `secret` go to the `Settings` tab in your project then select `Secrets`.
+I strongly recommend you store your `password` as a secret.
+
 
 ## Inputs
 
