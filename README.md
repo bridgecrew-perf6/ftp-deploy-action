@@ -25,8 +25,9 @@ Keys can be added directly to your .yml config file or referenced from your proj
 To add a `secret` go to the `Settings` tab in your project then select `Secrets`.
 I strongly recommend you store your `password` as a secret.
 
+---
 
-## Inputs
+### Inputs
 
 ### `ftp_host`
 
